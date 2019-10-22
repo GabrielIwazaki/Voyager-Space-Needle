@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 .all {
-    
+    display: flex;
+
 }
 .formView {
     display: flex;
@@ -38,12 +39,14 @@
     flex-direction: column;
     align-items: center;
     margin-left: 6em;
-    width: 640px;
+    /* width: 640px; */
+    width: 1115px;
     
 }
 .condicoesView label {
     align-self: baseline;
     margin-top: 1em;
+    margin-left: 240px;
 }
 .itensView {
     display: flex;
@@ -105,4 +108,12 @@
 }
 .save:hover {
     background-color: rgb(202, 74, 74);
+}
+.listView {
+
+    height: 800px;
+    width: 700px;
+    margin-left: 40px;
+    background: #F6F6F6;
+    box-shadow: 1px 0px 9px rgba(0, 0, 0, 0.39);
 }

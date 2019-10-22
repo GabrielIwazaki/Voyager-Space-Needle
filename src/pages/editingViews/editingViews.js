@@ -22,9 +22,15 @@ export default class editingFields extends Component {
                     <div className="condicoesView">
                         <label>Condições</label>
                         <div className="itensView">
-                            <select className="item" placeholder="Status"/>
-                            <select className="item" placeholder="É"/>
-                            <select className="item" placeholder="Novo"/>
+                            <select className="item">
+                            <option value="" disabled selected>Status</option>
+                            </select>
+                            <select className="item">
+                            <option value="" disabled selected>É</option>
+                            </select>
+                            <select className="item">
+                            <option value="" disabled selected>Novo</option>
+                            </select>
                         </div>
                         <div className="divadd">
                             <button className="add">Adicionar</button>
