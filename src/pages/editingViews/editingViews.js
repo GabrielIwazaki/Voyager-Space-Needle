@@ -19,12 +19,16 @@ export default class editingFields extends Component {
                         <label>Título da View</label>
                         <input className="tituloView"/>
                     </div>
-                        <label>Condições</label>
                     <div className="condicoesView">
+                        <label>Condições</label>
                         <div className="itensView">
-                            <div className="item"></div>
-                            <div className="item"></div>
-                            <div className="item"></div>
+                            <select className="item" placeholder="Status"/>
+                            <select className="item" placeholder="É"/>
+                            <select className="item" placeholder="Novo"/>
+                        </div>
+                        <div className="divadd">
+                            <button className="add">Adicionar</button>
+                            <button className="save">Salvar</button>
                         </div>
                     </div>
                 </div>

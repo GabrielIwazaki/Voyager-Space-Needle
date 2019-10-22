@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
 }
 .divtitulo {
@@ -19,6 +20,10 @@
     margin-top: 8em;
     margin-left: 10em;
 }
+.divtitulo label {
+    align-self: baseline;
+}
+
 .tituloView {
     width: 639px;
     height: 48px;
@@ -32,6 +37,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 6em;
+    width: 640px;
+    
+}
+.condicoesView label {
+    align-self: baseline;
+    margin-top: 1em;
 }
 .itensView {
     display: flex;
@@ -42,9 +54,55 @@
     margin: auto;
 }
 .item {
+    margin-top: 1em;
     width: 146px;
     height: 48px;
     background: #F9F9F9;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+.divadd {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 700px;
+    margin-right: 3.8em;
+    margin-top: 2em;
+
+}
+.add {
+    transition: all 0.5s;
+    width: 136px;
+    height: 44px;
+    background: #242C91;
+    border-radius: 6px;
+    border: none;
+    align-self: flex-end;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add:hover {
+    background-color: rgb(74, 83, 202);
+
+}
+.save {
+    margin-top: 1em;
+    transition: all 0.5s;
+    width: 136px;
+    height: 44px;
+    background: #AD1130;
+    border-radius: 6px;
+    border: none;
+    align-self: flex-end;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+.save:hover {
+    background-color: rgb(202, 74, 74);
 }
