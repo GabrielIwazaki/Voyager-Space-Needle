@@ -374,5 +374,3 @@ export default class editingFields extends Component {
 
     }
 }
-
-

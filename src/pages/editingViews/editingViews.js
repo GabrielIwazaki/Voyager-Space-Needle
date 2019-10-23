@@ -8,6 +8,40 @@ import Swal from 'sweetalert2'
 
 export default class editingFields extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            id: '',
+            condition: []
+        }
+    }
+
+    createCondition() {
+        return this.state.condition.map((el, i) =>
+            <div className="geral">
+                <div key={i} className="itensViewextra">
+                    <select className="itemextra">
+                        <option value="" disabled selected>Status</option>
+                    </select>
+                    <select className="itemextra">
+                        <option value="" disabled selected>É</option>
+                    </select>
+                    <select className="itemextra">
+                        <option value="" disabled selected>Novo</option>
+                    </select>
+                    <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
+                </div>
+            </div>
+        )
+    }
+    addClick() {
+        this.setState(prevState => ({ condition: [...prevState.condition, ''] }))
+    }
+    removeClick(i) {
+        let condition = [...this.state.condition];
+        condition.splice(i, 1);
+        this.setState({ condition });
+    }
     render() {
         const root = this;
         return (
@@ -17,30 +51,31 @@ export default class editingFields extends Component {
                 <div className="formView">
                     <div className="divtitulo">
                         <label>Título da View</label>
-                        <input className="tituloView"/>
+                        <input className="tituloView" />
                     </div>
                     <div className="condicoesView">
                         <label>Condições</label>
                         <div className="itensView">
                             <select className="item">
-                            <option value="" disabled selected>Status</option>
+                                <option value="" disabled selected>Status</option>
                             </select>
                             <select className="item">
-                            <option value="" disabled selected>É</option>
+                                <option value="" disabled selected>É</option>
                             </select>
                             <select className="item">
-                            <option value="" disabled selected>Novo</option>
+                                <option value="" disabled selected>Novo</option>
                             </select>
                         </div>
+                            {this.createCondition()}
                         <div className="divadd">
-                            <button className="add">Adicionar</button>
+                            <button className="add" onClick={this.addClick.bind(this)}>Adicionar</button>
                             <button className="save">Salvar</button>
                         </div>
                     </div>
                 </div>
-                <div className="listView">
+                {/* <div className="listView">
 
-                </div>
+                </div> */}
             </div>
         )
     }
