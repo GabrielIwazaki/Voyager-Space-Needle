@@ -18,15 +18,15 @@ export default class editingFields extends Component {
 
     createCondition() {
         return this.state.condition.map((el, i) =>
-            <div className="geral">
-                <div key={i} className="itensViewextra">
-                    <select className="itemextra">
+            <div className="general">
+                <div key={i} className="itensView-extra">
+                    <select className="itemExtra">
                         <option value="" disabled selected>Status</option>
                     </select>
-                    <select className="itemextra">
+                    <select className="itemExtra">
                         <option value="" disabled selected>É</option>
                     </select>
-                    <select className="itemextra">
+                    <select className="itemExtra">
                         <option value="" disabled selected>Novo</option>
                     </select>
                 </div>
@@ -49,11 +49,11 @@ export default class editingFields extends Component {
                 <Header />
                 <Menu />
                 <div className="formView">
-                    <div className="divtitulo">
+                    <div className="divTitle">
                         <label>Título da View</label>
-                        <input className="tituloView" />
+                        <input className="viewTitle" />
                     </div>
-                    <div className="condicoesView">
+                    <div className="conditionsView">
                         <label>Condições</label>
                         <div className="itensView">
                             <select className="item">
@@ -67,7 +67,7 @@ export default class editingFields extends Component {
                             </select>
                         </div>
                             {this.createCondition()}
-                        <div className="divadd">
+                        <div className="divAdd">
                             <button className="add" onClick={this.addClick.bind(this)}>Adicionar</button>
                             <button className="save">Salvar</button>
                         </div>

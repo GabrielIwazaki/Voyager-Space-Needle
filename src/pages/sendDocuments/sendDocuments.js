@@ -64,17 +64,17 @@ export default class sendDocument extends Component {
                 <Header />
                 <Menu />
                 <form onSubmit={this.registerDocument.bind(this)} className="form">
-                    <div className="inputFixo">
-                    <input placeholder="Nome do Campo*" className="nomeCampo"/>
-                        <textarea placeholder="Descrição..." className="descricao"/>
+                    <div className="fixedInput">
+                    <input placeholder="Nome do Campo*" className="fieldName"/>
+                        <textarea placeholder="Descrição..." className="description"/>
                         
                     </div>
                     {
                         this.state.list.map(function (document) {
                             return (
-                                <div className="inputMovel">
+                                <div className="dynamicInput">
                                     <div>
-                                        <li className="lista">
+                                        <li className="listDiv">
                                             <input placeholder={document.FieldName} name={document.FieldName} type={document.fieldType} className={document.fieldType} onChange={document.updateState} />
                                         </li>
                                     </div>
