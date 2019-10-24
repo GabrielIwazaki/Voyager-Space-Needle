@@ -29,8 +29,8 @@ export default class editingFields extends Component {
                     <select className="itemextra">
                         <option value="" disabled selected>Novo</option>
                     </select>
-                    <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
                 </div>
+                    <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
             </div>
         )
     }

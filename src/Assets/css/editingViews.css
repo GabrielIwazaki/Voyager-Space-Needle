@@ -39,31 +39,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 117vh;
+    width: 118vh;
     
 }
 .condicoesView label {
     align-self: baseline;
-    margin-top: 1em;
-    margin-left: 17vh;
+    margin-top: 2em;
+    margin-left: 22vh;
+    margin-bottom: -3vh;
 }
 .itensView {
     display: flex;
     justify-content: space-between;
-    width: 100vh;
+    width: 75%;
     height: 48px;
     margin-top: 1em;
-    margin: auto;
-    margin-left: 16vh;
+    margin-left: 12%;
+    margin-bottom: 2%;
 }
 .itensViewextra {
     display: flex;
     justify-content: space-between;
-    width: 100vh;
+    width: 89vh;
     height: 48px;
-    margin-top: 1em;
-    margin: auto;
-    margin-left: 25vh;
+    margin-left: 22%;
     align-items: center;
 }
 .item {
@@ -91,9 +90,8 @@
     flex-direction: column;
     align-self: center;
     width: 700px;
-    margin-right: 3.8em;
     margin-top: 2em;
-
+    margin-left: 6%;
 }
 .add {
     transition: all 0.5s;
@@ -145,7 +143,7 @@
     background-repeat: no-repeat;
     height: 3vh;
     cursor: pointer;
-    /* margin-right: 13vh; */
+    margin: auto;
 }
 .geral {
     width: 135vh;
@@ -153,5 +151,5 @@
     text-align: center;
     align-items: center;
     margin-top: 2vh;
-
+    margin-left: 1%;
 }
