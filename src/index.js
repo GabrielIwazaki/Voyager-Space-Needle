@@ -22,9 +22,9 @@ const rotas = (
     <Router>
         <div>
             <Switch>
-                {/* <Route exact path="/" component={editingFields} /> */}
-                <Route exact path="/" component={sendDocuments} />
-                {/* <Route exact path="/" component={editingViews} /> */}
+                <Route exact path="/editingfields" component={editingFields} />
+                <Route exact path="/senddocuments" component={sendDocuments} />
+                <Route exact path="/editingviews" component={editingViews} />
                 <Route component={notFound} />
             </Switch>
         </div>

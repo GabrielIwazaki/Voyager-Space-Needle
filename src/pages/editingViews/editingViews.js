@@ -12,8 +12,12 @@ export default class editingFields extends Component {
         super();
         this.state = {
             id: '',
-            condition: []
+            condition: [],
+            field: [{ id: '', fieldName: '', fieldType: '', visible: false, required: false, values: [] }],
         }
+    }
+    componentDidMount() {
+        this.searchFields();
     }
 
     createCondition() {
@@ -21,7 +25,13 @@ export default class editingFields extends Component {
             <div className="general">
                 <div key={i} className="itensView-extra">
                     <select className="itemExtra">
-                        <option value="" disabled selected>Status</option>
+                        {
+                            this.state.field.map((field) => {
+                                return (
+                                    <option value="">{field.fieldName}</option>
+                                )
+                            })
+                        }
                     </select>
                     <select className="itemExtra">
                         <option value="" disabled selected>É</option>
@@ -30,9 +40,19 @@ export default class editingFields extends Component {
                         <option value="" disabled selected>Novo</option>
                     </select>
                 </div>
-                    <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
+                <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
             </div>
         )
+    }
+    searchFields() {
+        fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document', {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(response => response.json())
+            .then(data => this.setState({ field: data }))
+            .catch(error => console.log(error))
     }
     addClick() {
         this.setState(prevState => ({ condition: [...prevState.condition, ''] }))
@@ -57,7 +77,13 @@ export default class editingFields extends Component {
                         <label>Condições</label>
                         <div className="itensView">
                             <select className="item">
-                                <option value="" disabled selected>Status</option>
+                                {
+                                    this.state.field.map((field) => {
+                                        return (
+                                            <option value={field.fieldName}>{field.fieldName}</option>
+                                        )
+                                    })
+                                }
                             </select>
                             <select className="item">
                                 <option value="" disabled selected>É</option>
@@ -66,7 +92,7 @@ export default class editingFields extends Component {
                                 <option value="" disabled selected>Novo</option>
                             </select>
                         </div>
-                            {this.createCondition()}
+                        {this.createCondition()}
                         <div className="divAdd">
                             <button className="add" onClick={this.addClick.bind(this)}>Adicionar</button>
                             <button className="save">Salvar</button>
@@ -74,7 +100,6 @@ export default class editingFields extends Component {
                     </div>
                 </div>
                 {/* <div className="listView">
-
                 </div> */}
             </div>
         )
