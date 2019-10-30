@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 6%;
 
 }
 .inputFixo {
@@ -18,22 +19,19 @@
     margin-top: 2em;
 }
 .nomeCampo {
-    padding: 1em;
-    width: 690px;
-    height: 48px;
-    margin-top: 8em;
-    top: 154px;
-    border: none;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
+    border: none;
+    padding: 1em;
 }
 .descricao {
     padding: 1em;
-    width: 690px;
-    height: 129px;
+    width: 46%;
+    height: 8vh;
     margin-top: 2em;
-    top: 261px;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
@@ -41,10 +39,8 @@
     border: none;
 }
 .list {
-    width: 690px;
-    height: 48px;
-    left: 385px;
-    top: 154px;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
@@ -53,10 +49,8 @@
     
 }
 .number {
-    width: 639px;
-    height: 48px;
-    left: 385px;
-    top: 154px;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
@@ -64,10 +58,8 @@
     padding: 1em;
 }
 .date {
-    width: 639px;
-    height: 48px;
-    left: 385px;
-    top: 154px;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
@@ -76,6 +68,7 @@
 }
 .input-file{
     padding: 2% 0;
+    margin-left: 27.5%;
     -webkit-appearance: none; 
 }
 .input-file::-webkit-file-upload-button:hover{
@@ -88,12 +81,11 @@
     height: 5vh;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.5s;
 }
 .text {
-    width: 690px;
-    height: 48px;
-    left: 385px;
-    top: 154px;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
@@ -101,20 +93,26 @@
     padding: 1em;
 }
 .multiple-selection {
-    width: 639px;
-    height: 48px;
-    left: 385px;
-    top: 154px;
+    width: 46%;
+    height: 8vh;
     background: #F9F9F9;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
     border-radius: 3px;
     border: none;
+    cursor: pointer;
     padding: 1em;
 }
 .lista {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     list-style-type: none;
 }
+.lista label{
+    width: 45%;
+    margin-bottom: 1%;
+}
+
 .buttons {
     display: flex;
     justify-content: space-evenly;
@@ -125,8 +123,8 @@
     color: gray;
     font-size: 16px;
     font-weight: bold;
-    width: 136px;
-    height: 44px;
+    width: 10%;
+    height: 6vh;
     background: #E3E3E3;
     border: 1px solid #C5C5C5;
     box-sizing: border-box;
@@ -138,10 +136,10 @@
 .send {
     transition: all 0.5s;
     color: white;
-    font-size: 16px;
+    font-size: 1em;
     font-weight: bold;
-    width: 136px;
-    height: 44px;
+    width: 10%;
+    height: 6vh;
     background: #242C91;
     border: 1px solid #C5C5C5;
     box-sizing: border-box;
@@ -149,6 +147,8 @@
     cursor: pointer;
     box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
 }
+
+
 .send:hover {
     background-color: rgb(74, 83, 202);
 

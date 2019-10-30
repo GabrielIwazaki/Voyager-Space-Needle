@@ -113,13 +113,13 @@ export default class editingFields extends Component {
     addClick() {
         this.setState(prevState => ({ values: [...prevState.values, ''] }))
     }
-    editStatus = (event) => {
+    editVisible = (event) => {
         event.preventDefault();
         if (window.confirm("Deseja excluir esse campo?")) {
-            fetch('http://192.168.4.53:5000/api/field/' + event.target.getAttribute('id'), {
+            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + event.target.getAttribute('id'), {
                 method: 'PUT',
                 body: JSON.stringify({
-                    visible: (event.target.getAttribute('visible') === 'visibleFalse' ? false : false)
+                    visible: (event.target.getAttribute('visible') === 'visibleTrue' ? true : false)
                 }),
                 headers: {
                     'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ export default class editingFields extends Component {
     registerField(event) {
         event.preventDefault();
         if (this.state.id != '') {
-            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document' + this.state.id, {
+            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + this.state.id, {
                 method: 'PUT',
                 body: JSON.stringify({
                     id: this.state.id,
@@ -179,8 +179,10 @@ export default class editingFields extends Component {
             })
                 .then(this.AlertSucessRegister())
                 .then(response => response)
-                .then(this.searchFields())
-                .then(this.clearForm())
+                .then(() => {
+                    (this.searchFields())
+                        (this.clearForm())
+                })
                 .catch(error => console.log(error))
         }
     }
@@ -189,7 +191,7 @@ export default class editingFields extends Component {
     searchForId(event) {
         event.preventDefault();
         console.log('f' + event.target.getAttribute('id'));
-        fetch('http://192.168.4.53:5000/api/field/' + event.target.getAttribute('id'), {
+        fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + event.target.getAttribute('id'), {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -231,7 +233,6 @@ export default class editingFields extends Component {
                 <Header />
                 {/* menu header */}
                 <Menu />
-
                 {/* Button responsible for activating the visibility of the submenu */}
                 {!this.state.isHiddenForm && <div className="register-fields">
                     {/* Section responsible for registering or editing a field*/}
@@ -345,33 +346,11 @@ export default class editingFields extends Component {
                             <div className="header-name">Nome</div>
                             <div field="header-type">Tipo</div>
                         </li>
-                        <li className="table-row">
-                                            <div className="row-id" data-label="header-id"></div>
-                                            <div className="row-name" data-label="header-name">Título</div>
-                                            <div className="requiredTrue" data-label="header-required">Obrigatório</div>
-                                            <div className="row-type" data-label="header-type">text</div>
-                                            <div className="row-actions">
-                                                <div className="row-edit-none"></div>
-                                                <div className="row-delete-none">
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li className="table-row">
-                                            <div className="row-id" data-label="header-id"></div>
-                                            <div className="row-name" data-label="header-name">Descrição</div>
-                                            <div className="requiredTrue" data-label="header-required">Obrigatório</div>
-                                            <div className="row-type" data-label="header-type">text</div>
-                                            <div className="row-actions">
-                                                <div className="row-edit-none"></div>
-                                                <div className="row-delete-none">
-                                                </div>
-                                            </div>
-                                        </li>
-
 
                         {
                             this.state.list.map(function (document) {
                                 if (document.visible == true) {
+                                    if(document.fieldName === "Título" || document.fieldName === "Descrição"){
                                     return (
                                         <li className="table-row">
                                             <div className="row-id" data-label="header-id">{document.id}</div>
@@ -379,12 +358,40 @@ export default class editingFields extends Component {
                                             <div className={document.required ? "requiredTrue" : "requiredFalse"} data-label="header-required">Obrigatório</div>
                                             <div className="row-type" data-label="header-type">{document.fieldType}</div>
                                             <div className="row-actions">
-                                                <div className="row-edit" id={document.id} onClick={root.searchForId}></div>
-                                                <div id={document.id} className="row-delete" onClick={root.editStatus}>
+                                                <div className="row-edit-none" id={document.id} ></div>
+                                                <div id={document.id} className="row-delete-none">
                                                 </div>
                                             </div>
                                         </li>
                                     );
+                                }else if(document.fieldName === "Status"){
+                                    return (
+                                        <li className="table-row">
+                                            <div className="row-id" data-label="header-id">{document.id}</div>
+                                            <div className="row-name" data-label="header-name">{document.fieldName}</div>
+                                            <div className={document.required ? "requiredTrue" : "requiredFalse"} data-label="header-required">Obrigatório</div>
+                                            <div className="row-type" data-label="header-type">{document.fieldType}</div>
+                                            <div className="row-actions">
+                                                <div className="row-edit-none" id={document.id}></div>
+                                                <div id={document.id} className="row-delete-none">
+                                                </div>
+                                            </div>
+                                        </li>
+                                    );
+                                }
+                                return (
+                                    <li className="table-row">
+                                        <div className="row-id" data-label="header-id">{document.id}</div>
+                                        <div className="row-name" data-label="header-name">{document.fieldName}</div>
+                                        <div className={document.required ? "requiredTrue" : "requiredFalse"} data-label="header-required">Obrigatório</div>
+                                        <div className="row-type" data-label="header-type">{document.fieldType}</div>
+                                        <div className="row-actions">
+                                            <div className="row-edit" id={document.id} onClick={root.searchForId}></div>
+                                            <div id={document.id} className="row-delete" onClick={root.editVisible}>
+                                            </div>
+                                        </div>
+                                    </li>
+                                );
                                 }
                             })
                         }
