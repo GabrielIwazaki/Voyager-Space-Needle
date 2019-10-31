@@ -43,7 +43,7 @@
     width: 118vh;
     
 }
-.conditionsView label {
+.conditionsView .conditionsTitle {
     align-self: baseline;
     margin-top: 2em;
     margin-left: 22vh;
@@ -104,7 +104,7 @@
     align-self: flex-end;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1em;
     cursor: pointer;
 }
 .add:hover {
@@ -152,4 +152,33 @@
     align-items: center;
     margin-top: 2vh;
     margin-left: 1%;
+}
+.columns {
+    width: 100%;
+}
+
+.columns .title {
+    margin-right: 48%;
+}
+.columnDiv {
+    display: flex;
+    width: 15%;
+    padding: 1%;
+    background-color: yellow;
+}
+
+.orderGeral {
+    width: 100%;
+}
+.columnCheckbox {
+    -webkit-appearance: none;
+}
+.columnCheckbox:checked {
+    -webkit-appearance: none;
+}
+.closeImg {
+    background-image: url("https://image.flaticon.com/icons/svg/109/109602.svg");
+    width: 10%;
+    height: 3vh;
+    background-repeat: no-repeat;
 }

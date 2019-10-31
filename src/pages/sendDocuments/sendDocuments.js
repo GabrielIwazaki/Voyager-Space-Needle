@@ -121,34 +121,34 @@ export default class sendDocument extends Component {
                                         </div>
                                     )
                                 } else if (document.fieldType === "list") {
-                                    if (document.fieldName != "Status") {
-                                        return (
-                                            <div className="inputMovel">
-                                                <div>
-                                                    <li className="lista">
-                                                        <label>{document.fieldName}</label>
-                                                        <select placeholder={document.fieldName} name={document.fieldName} type={document.fieldType} className="text" onChange={this.updateState}>
+                                    if(document.fieldName != "Status"){
+                                    return (
+                                        <div className="inputMovel">
+                                            <div>
+                                                <li className="lista">
+                                                    <label>{document.fieldName}</label>
+                                                    <select placeholder={document.fieldName} name={document.fieldName} type={document.fieldType} className="text" onChange={this.updateState}>
 
-                                                            {
-                                                                this.state.field.map((value) => {
-                                                                    if (document.fieldName === value.fieldName) {
-                                                                        return (
-                                                                            value.values.map((value2) => {
-                                                                                return (
-                                                                                    <option selected="selected">{value2}</option>
-                                                                                )
-                                                                            }))
-                                                                    }
+                                                        {
+                                                            this.state.field.map((value) => {
+                                                                if (document.fieldName === value.fieldName) {
+                                                                    return (
+                                                                        value.values.map((value2) => {
+                                                                            return (
+                                                                                <option selected="selected">{value2}</option>
+                                                                            )
+                                                                        }))
+                                                                }
 
 
-                                                                })
-                                                            }
-                                                        </select>
-                                                    </li>
-                                                </div>
+                                                            })
+                                                        }
+                                                    </select>
+                                                </li>
                                             </div>
-                                        )
-                                    }
+                                        </div>
+                                    )
+                                }
                                 }
                                 else {
                                     return (
