@@ -161,24 +161,82 @@
     margin-right: 48%;
 }
 .columnDiv {
-    display: flex;
+    display: inline;
     width: 15%;
     padding: 1%;
-    background-color: yellow;
+    background-color: purple;
 }
 
 .orderGeral {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .columnCheckbox {
+    margin-top: 1vh;
     -webkit-appearance: none;
 }
 .columnCheckbox:checked {
     -webkit-appearance: none;
+    background-color: #242C91;
 }
 .closeImg {
-    background-image: url("https://image.flaticon.com/icons/svg/109/109602.svg");
+    background-image: url("https://image.flaticon.com/icons/png/512/14/14704.png");
     width: 10%;
     height: 3vh;
     background-repeat: no-repeat;
+}
+.columnDiv label {
+    align-self: center;
+}
+.allCheckbox {
+    display: flex;
+}
+
+
+
+
+ul.ks-cboxtags {
+    list-style: none;
+    /* padding: 20px; */
+    align-content: center;
+    justify-content: center;
+}
+ul.ks-cboxtags li{
+  display: inline;
+}
+ul.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    /* content: url(https://image.flaticon.com/icons/svg/32/32178.svg); */
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] :checked {
+    
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #1bdbf8;
+    background-color: #12bbd4;
+    color: #fff;
+    transition: all .2s;
 }
