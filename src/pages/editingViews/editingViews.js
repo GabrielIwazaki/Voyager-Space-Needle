@@ -155,15 +155,15 @@ export default class editingFields extends Component {
                             <label className="title">Colunas da Tabela</label>
                             <div className="allCheckbox">
                                 {
-                                    this.state.field.map((field) => {
+                                    this.state.field.map((field,index) => {
                                         if (field.visible == true) {
                                             return (
                                                 <ul class="ks-cboxtags">
-                                                    <li>
-                                                        {/* <input type="checkbox" id="checkboxOne" value={field.fieldName} onChange={this.updateColumn} /><label for="checkboxOne">{field.fieldName}</label> */}
-                                                        <label for="checkboxOne">
+                                                        <li>
                                                         
-                                                        <input type="checkbox" className="checkboxOne" value={field.fieldName} onChange={this.updateColumn.bind(this)} />
+                                                        <label htmlFor={`checkbox${index}`}>
+                                                        
+                                                        <input id={`checkbox${index}`} type="checkbox" className="checkboxOne" value={field.fieldName} onChange={this.updateColumn.bind(this)} />
                                                         
                                                         {field.fieldName}
                                                         
