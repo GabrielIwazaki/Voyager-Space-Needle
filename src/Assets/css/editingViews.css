@@ -2,25 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; */
 }
 .all {
     display: flex;
 
 }
 .formView {
-    width: auto;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: auto;
+    margin-left: 5%;
 }
 .divTitle {
     width: 82%;
     display: flex;
     flex-direction: column;
     margin-top: 8em;
-    margin-left: 10em;
+
 }
 .divTitle label {
     align-self: baseline;
@@ -39,23 +40,20 @@
 .conditionsView {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 118vh;
     
 }
 .conditionsView .conditionsTitle {
     align-self: baseline;
     margin-top: 2em;
-    margin-left: 22vh;
     margin-bottom: -3vh;
 }
 .itensView {
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 92%;
     height: 7vh;
     margin-top: 1em;
-    margin-left: 12%;
     margin-bottom: 2%;
 }
 .itensView-extra {
@@ -88,11 +86,19 @@
 }
 .divAdd {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    display: flex;
     align-self: center;
-    width: 82%;
+    width: 92%;
     margin-top: 2em;
-    margin-left: 6%;
+}
+.divSave {
+    display: flex;
+    flex-direction: row-reverse;
+    display: flex;
+    align-self: center;
+    width: 76%;
+    margin-top: 2em;
 }
 .add {
     transition: all 0.5s;
@@ -154,7 +160,11 @@
     margin-left: 1%;
 }
 .columns {
-    width: 100%;
+    width: 80%;
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
+
 }
 
 .columns .title {
@@ -168,9 +178,18 @@
 }
 
 .orderGeral {
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
+    margin-top: 2vh;
+}
+.orderGeral label {
+    align-self: baseline;
+}
+.order {
+    justify-content: space-between;
+    display: flex;
+    width: 95%;
 }
 .columnCheckbox {
     margin-top: 1vh;
@@ -190,26 +209,26 @@
     align-self: center;
 }
 .allCheckbox {
+    width: 100%;
+    margin-top: 1%;
+    flex-wrap: wrap;
     display: flex;
-    padding: 0 18%;
 }
-
-
 
 
 ul.ks-cboxtags {
     list-style: none;
-    /* padding: 20px; */
     align-content: center;
-    justify-content: center;
+    display: flex;
+    margin: 0 1%;
 }
 ul.ks-cboxtags li{
-  display: inline;
+    /* padding: 0 10px; */
+
 }
 ul.ks-cboxtags li label{
-    display: inline-block;
     background-color: rgba(255, 255, 255, .9);
-    border: 2px solid rgba(139, 139, 139, .3);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     color: #adadad;
     border-radius: 25px;
     white-space: nowrap;
@@ -223,27 +242,42 @@ ul.ks-cboxtags li label{
     transition: all .2s;
     padding: 8px 12px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label::before {
-    /* content: url(https://image.flaticon.com/icons/svg/32/32178.svg); */
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+    
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
-    border: 2px solid #1bdbf8;
-    background-color: #12bbd4;
+    background-color: rgb(33, 40, 138);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     color: #fff;
     transition: all .2s;
 }
-
+.checkImg {
+    width: 15px;
+    height: 1vh;
+    background-image: url(https://image.flaticon.com/icons/svg/32/32178.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    fill: #fff;
+}
 ul.ks-cboxtags li input[type="checkbox"] {
-    -webkit-appearance: none;
+    -webkit-appearance: none
 }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+ul.ks-cboxtags label input[type="checkbox"]:checked{
     border: 2px solid #1bdbf8;
     background-color: #12bbd4;
     color: #fff;
     transition: all .2s;
+    
+}
+
+form{
+    width: 72%;
+    text-align: -webkit-center;
 }

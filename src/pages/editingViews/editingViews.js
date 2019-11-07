@@ -160,11 +160,9 @@ export default class editingFields extends Component {
                                             return (
                                                 <ul class="ks-cboxtags">
                                                         <li>
-                                                        
-                                                        <label htmlFor={`checkbox${index}`}>
-                                                        
                                                         <input id={`checkbox${index}`} type="checkbox" className="checkboxOne" value={field.fieldName} onChange={this.updateColumn.bind(this)} />
-                                                        
+                                                        <label htmlFor={`checkbox${index}`}>                                                     
+                                                        <div className="checkImg"></div>
                                                         {field.fieldName}
                                                         
                                                         </label>
@@ -206,8 +204,9 @@ export default class editingFields extends Component {
                                 </select>
                             </div>
                         </div>
-
-                        <button className="save" type="submit">Salvar</button>
+                        <div className="divSave">
+                            <button className="save" type="submit">Salvar</button>
+                        </div>
                     </form>
                 </div>
 
