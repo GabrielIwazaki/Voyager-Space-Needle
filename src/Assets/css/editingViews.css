@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+     user-select: none;
     /* overflow: hidden; */
 }
 .all {
@@ -195,10 +199,6 @@
     margin-top: 1vh;
     -webkit-appearance: none;
 }
-.columnCheckbox:checked {
-    -webkit-appearance: none;
-    background-color: #242C91;
-}
 .closeImg {
     background-image: url("https://image.flaticon.com/icons/png/512/14/14704.png");
     width: 10%;
@@ -260,21 +260,13 @@ ul.ks-cboxtags li input[type="checkbox"]:checked + label {
 .checkImg {
     width: 15px;
     height: 1vh;
-    background-image: url(https://image.flaticon.com/icons/svg/32/32178.svg);
+    background-image: url("../images/icons/delete.png");
     background-size: 50%;
     background-repeat: no-repeat;
-    fill: #fff;
+
 }
 ul.ks-cboxtags li input[type="checkbox"] {
     -webkit-appearance: none
-}
-
-ul.ks-cboxtags label input[type="checkbox"]:checked{
-    border: 2px solid #1bdbf8;
-    background-color: #12bbd4;
-    color: #fff;
-    transition: all .2s;
-    
 }
 
 form{
