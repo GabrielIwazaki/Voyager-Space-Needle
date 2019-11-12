@@ -15,7 +15,7 @@
 .formView {
     width: 95%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
     margin-left: 5%;
@@ -29,10 +29,11 @@
 }
 .divTitle label {
     align-self: baseline;
+    margin-left: 35px;
 }
 
 .viewTitle {
-    width: 92%;
+    width: 90%;
     height: 7vh;
     margin-top: 1em;
     background: #F9F9F9;
@@ -50,12 +51,13 @@
 .conditionsView .conditionsTitle {
     align-self: baseline;
     margin-top: 2em;
-    margin-bottom: -3vh;
+    margin-bottom: -2vh;
+    margin-left: 30px;
 }
 .itensView {
     display: flex;
     justify-content: space-between;
-    width: 92%;
+    width: 90%;
     height: 7vh;
     margin-top: 1em;
     margin-bottom: 2%;
@@ -63,15 +65,13 @@
 .itensView-extra {
     display: flex;
     justify-content: space-between;
-    width: 89vh;
+    width: 90%;
     height: 7vh;
-    margin-left: 22%;
     align-items: center;
 }
 .item {
     margin-top: 1em;
-
-    width: 23%;
+    width: 160px;
     height: 7vh;
     background: #F9F9F9;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -80,7 +80,7 @@
     cursor: pointer;
 }
 .itemExtra {
-    width: 23%;
+    width: 160px;
     height: 7vh;
     background: #F9F9F9;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -153,18 +153,18 @@
     background-repeat: no-repeat;
     height: 3vh;
     cursor: pointer;
-    margin: auto;
+    margin-left: 20px;
 }
 .general {
-    width: 135vh;
+    width: 100%;
     display: flex;
     text-align: center;
     align-items: center;
     margin-top: 2vh;
-    margin-left: 1%;
+    margin-left: 5%;
 }
 .columns {
-    width: 80%;
+    width: 75%;
     display: flex;
     align-items: baseline;
     flex-direction: column;
@@ -189,11 +189,23 @@
 }
 .orderGeral label {
     align-self: baseline;
+    margin-left: 25px;
 }
 .order {
     justify-content: space-between;
     display: flex;
-    width: 95%;
+    width: 92%;
+}
+.OrderItem {
+    margin-top: 1em;
+    width: 550px;
+    height: 7vh;
+    background: #F9F9F9;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    margin-right: 65px;
 }
 .columnCheckbox {
     margin-top: 1vh;
@@ -213,6 +225,14 @@
     margin-top: 1%;
     flex-wrap: wrap;
     display: flex;
+}
+.list-View {
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    background: #F6F6F6;
+    box-shadow: 1px 0px 9px rgba(0, 0, 0, 0.39);
+
 }
 
 

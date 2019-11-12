@@ -187,7 +187,7 @@ export default class editingFields extends Component {
                         <div className="orderGeral">
                             <label>Ordenação</label>
                             <div className="order">
-                                <select className="item">
+                                <select className="OrderItem">
                                     {
                                         this.state.field.map((field) => {
                                             if (field.visible === true) {
@@ -208,6 +208,7 @@ export default class editingFields extends Component {
                             <button className="save" type="submit">Salvar</button>
                         </div>
                     </form>
+                    <div className="list-View"></div>
                 </div>
 
             </div>
