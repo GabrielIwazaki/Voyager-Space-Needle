@@ -110,16 +110,17 @@ export default class sendDocument extends Component {
                                                     <ul>
                                                         <li className="lista">
                                                             <label>{document.fieldName}</label>
-                                                            {
-                                                                this.state.field.map((field, index) => {
-                                                                    if (document.fieldName === field.fieldName) {
-                                                                        return (
-                                                                            field.values.map((values) => {
-                                                                                return (
-                                                                                    <div  class="inputGroup">
-                                                                                        <label htmlFor={`checkbox${index}`}>{values}</label>
-                                                                                        <input id={`checkbox${index}`} name="option1" type="checkbox" />
-                                                                                    </div>
+                                                            <div className="all-checkbox">
+                                                                {
+                                                                    this.state.field.map((field, index) => {
+                                                                        if (document.fieldName === field.fieldName) {
+                                                                            return (
+                                                                                field.values.map((values) => {
+                                                                                    return (
+                                                                                        <div  class="inputGroup">
+                                                                                            <input id={`checkbox${index}`} type="checkbox" />
+                                                                                            <label htmlFor={`checkbox${index}`}>{values}</label>
+                                                                                        </div>
 
 
 
@@ -127,15 +128,16 @@ export default class sendDocument extends Component {
 
 
 
-                                                                                    // <label htmlFor={`checkbox${index}`}>
-                                                                                    //     {values}
-                                                                                    //     <input id={`checkbox${index}`} type="checkbox" />
-                                                                                    // </label>
-                                                                                    )
-                                                                            }))
-                                                                    }
-                                                                })
-                                                            }
+                                                                                        // <label htmlFor={`checkbox${index}`}>
+                                                                                        //     {values}
+                                                                                        //     <input id={`checkbox${index}`} type="checkbox" />
+                                                                                        // </label>
+                                                                                        )
+                                                                                }))
+                                                                        }
+                                                                    })
+                                                                }
+                                                            </div>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -171,7 +171,7 @@
     position: relative;
     align-items: center;
     padding: 0 20px;
-    
+    width: 320px;
 }
 .inputGroup label {
     padding: 12px 30px;
@@ -211,4 +211,11 @@
     transform: translateY(-50%);
     cursor: pointer;
     /* visibility: hidden; */
+  }
+
+  .all-checkbox {
+    display: flex;
+    width: 46%;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
