@@ -17,7 +17,7 @@ export default class editingFields extends Component {
             isHiddenField: true, //field value input preview
             fieldType: '', //defined field type
             required: false, //required field
-            values: [], //field value set if required
+            values: [{valueName:''}], //field value set if required
             list: [], //list with all fields registered
             visible: true
         }
@@ -56,7 +56,7 @@ export default class editingFields extends Component {
 
     //method responsible for viewing input value input if field type is list or multiple selection
     toggleHiddenValue(fieldType) {
-        if (fieldType.target.id === "list" || fieldType.target.id === "multiple-selection") {
+        if (fieldType.target.id === "list" || fieldType.target.id === "multipleselection") {
             this.setState({
                 isHiddenField: this.state.isHiddenField = false
             })
@@ -79,7 +79,7 @@ export default class editingFields extends Component {
     }
     //search all fields registered
     searchFields() {
-        fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document', {
+        fetch('http://192.168.4.49:5000/api/field', {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -96,10 +96,11 @@ export default class editingFields extends Component {
     createInput() {
         return this.state.values.map((el, i) =>
             <div key={i} className="field-value-input">
-                <input type="text" required value={el || ''} placeholder="Valor do Campo*" onChange={this.handleChange.bind(this, i)} />
+                <input type="text" required value={el.valueName || ''} placeholder="Valor do Campo *" onChange={this.handleChange.bind(this, i)} />
                 <div type='button' className="remove-value" value='remove' onClick={this.removeClick.bind(this, i)}> </div>
-            </div>
+            </div>       
         )
+        
     }
 
     //add entered values ​​to field
@@ -116,7 +117,7 @@ export default class editingFields extends Component {
     editVisible = (event) => {
         event.preventDefault();
         if (window.confirm("Deseja excluir esse campo?")) {
-            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + event.target.getAttribute('id'), {
+            fetch('http://192.168.4.49:5000/api/field/visual/' + event.target.getAttribute("id"), {
                 method: 'PUT',
                 body: JSON.stringify({
                     visible: (event.target.getAttribute('visible') === 'visibleTrue' ? true : false)
@@ -142,13 +143,14 @@ export default class editingFields extends Component {
     registerField(event) {
         event.preventDefault();
         if (this.state.id != '') {
-            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + this.state.id, {
+            fetch('http://192.168.4.49:5000/api/field/' + this.state.id, {
                 method: 'PUT',
                 body: JSON.stringify({
                     id: this.state.id,
                     fieldName: this.state.fieldName,
                     fieldType: this.state.fieldType,
                     values: this.state.values,
+                    visible: true,
                     required: this.state.required
                 }),
                 headers: {
@@ -163,12 +165,22 @@ export default class editingFields extends Component {
 
         }
         else {
-            fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document', {
+
+            // console.log(this.state.values)
+            let valor = this.state.values.map(element => {
+                return {
+                    valueName: element
+                }
+            })
+
+            console.log()
+
+            fetch('http://192.168.4.49:5000/api/field', {
                 method: 'POST',
                 body: JSON.stringify({
                     fieldName: this.state.fieldName,
                     fieldType: this.state.fieldType,
-                    values: this.state.values,
+                    values: valor,
                     required: this.state.required,
                     visible: this.state.visible
                 }),
@@ -191,7 +203,7 @@ export default class editingFields extends Component {
     searchForId(event) {
         event.preventDefault();
         console.log('f' + event.target.getAttribute('id'));
-        fetch('https://5d8289a9c9e3410014070b11.mockapi.io/document/' + event.target.getAttribute('id'), {
+        fetch('http://192.168.4.49:5000/api/field/' + event.target.getAttribute('id'), {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -258,16 +270,19 @@ export default class editingFields extends Component {
                                 <div className="radio--field-types">
                                     <label for="list">
                                         <input type="radio" name="field-types"
-                                            value="list" checked={this.state.fieldType === 'list'} id="list" onChange={this.updateStateFieldTypeForm} onClick={this.toggleHiddenValue.bind(this)} />
+                                            value="list" checked={this.state.fieldType === 'list'} id="list" onChange={this.updateStateFieldTypeForm} 
+                                            onClick={this.toggleHiddenValue.bind(this)}
+                                             />
                                         <img src="https://image.flaticon.com/icons/svg/482/482559.svg" />Lista</label>
 
                                 </div>
 
-                                {/* field type:multiple-selection */}
+                                {/* field type:multipleselection */}
                                 <div className="radio--field-types">
-                                    <label for="multiple-selection">
+                                    <label for="multipleselection">
                                         <input type="radio" name="field-types"
-                                            value="multiple-selection" checked={this.state.fieldType === 'multiple-selection'} id="multiple-selection" onChange={this.updateStateFieldTypeForm} onClick={this.toggleHiddenValue.bind(this)} />
+                                            value="multipleselection" checked={this.state.fieldType === 'multipleselection'} id="multipleselection" onChange={this.updateStateFieldTypeForm}
+                                             onClick={this.toggleHiddenValue.bind(this)} />
                                         <img src="https://image.flaticon.com/icons/svg/2087/2087812.svg" />Seleção Múltipla</label>
                                 </div>
 
@@ -275,7 +290,7 @@ export default class editingFields extends Component {
                                 <div className="radio--field-types">
                                     <label for="numeric">
                                         <input type="radio" name="field-types"
-                                            value="number" checked={this.state.fieldType === 'number'} id="numeric" onChange={this.updateStateFieldTypeForm} onClick={this.toggleHiddenValue.bind(this)} />
+                                            value="numeric" checked={this.state.fieldType === 'numeric'} id="numeric" onChange={this.updateStateFieldTypeForm} onClick={this.toggleHiddenValue.bind(this)} />
                                         <img src="https://image.flaticon.com/icons/svg/56/56632.svg" />Numérico</label>
                                 </div>
 
@@ -353,7 +368,7 @@ export default class editingFields extends Component {
                                     if(document.fieldName === "Título" || document.fieldName === "Descrição"){
                                     return (
                                         <li className="table-row">
-                                            <div className="row-id" data-label="header-id">{document.id}</div>
+                                            <div className="row-id" data-label="header-id">{document.id.slice(0,7)}</div>
                                             <div className="row-name" data-label="header-name">{document.fieldName}</div>
                                             <div className={document.required ? "requiredTrue" : "requiredFalse"} data-label="header-required">Obrigatório</div>
                                             <div className="row-type" data-label="header-type">{document.fieldType}</div>
@@ -381,7 +396,7 @@ export default class editingFields extends Component {
                                 }
                                 return (
                                     <li className="table-row">
-                                        <div className="row-id" data-label="header-id">{document.id}</div>
+                                        <div className="row-id" data-label="header-id"  maxlength="3">{document.id}</div>
                                         <div className="row-name" data-label="header-name">{document.fieldName}</div>
                                         <div className={document.required ? "requiredTrue" : "requiredFalse"} data-label="header-required">Obrigatório</div>
                                         <div className="row-type" data-label="header-type">{document.fieldType}</div>
