@@ -9,31 +9,49 @@ function menu(){
                 <li>
                     <a href="#">
                         <div className="account-img"></div>
-                        Minha conta
+                        <div>
+                            Minha conta
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div className="doc-fields"></div>
-                        Campos do Document
+                        <div>
+                            Campos do Document
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div className="views-add"></div>
-                        Cadastro de Views
+                        <div>
+                            Cadastro de Views
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div className="doc-list"></div>
-                    Lista de Documents
+                        <div>
+                            Lista de Documents
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <div className="doc-details"></div>
-                        Documents Details
+                        <div>
+                            Detalhes do Document
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div className="send-doc"></div>
+                        <div>
+                            Envio de Document
+                        </div>
                     </a>
                 </li>
             </ul>

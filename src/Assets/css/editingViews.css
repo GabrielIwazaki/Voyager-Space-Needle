@@ -34,6 +34,7 @@
 .divTitle label {
     align-self: baseline;
     margin-left: 35px;
+    color: black;
 }
 
 .viewTitle {
@@ -192,6 +193,7 @@
 .orderGeral label {
     align-self: baseline;
     margin-left: 25px;
+    color: black;
 }
 .order {
     justify-content: space-between;
@@ -221,6 +223,7 @@
 }
 .columnDiv label {
     align-self: center;
+    color: black;
 }
 .allCheckbox {
     width: 100%;

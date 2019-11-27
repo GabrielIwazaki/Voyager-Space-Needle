@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import "../../Assets/css/notFound.css";
 
 class notFound extends Component {
     render() {
         return (
             <div className="notfound-container">
-                <h1>Não encontrado</h1>
+                <h1>404</h1>
+                <p>Oops! Algo deu errado.</p>
+                <a class="button-backhome" href="#"><i class="icon-home"></i> Volte para a página inicial, é melhor.</a>
             </div>
         )
     }
