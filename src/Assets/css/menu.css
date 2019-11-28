@@ -114,3 +114,6 @@ body{
   background-image: url(../images/icons/paper-plane.png);
   background-repeat: no-repeat;
 }
+.account-li {
+  display: none;
+}

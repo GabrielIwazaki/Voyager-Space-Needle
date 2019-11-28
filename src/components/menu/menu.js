@@ -7,7 +7,7 @@ function menu(){
     <div className="menu">
         <div className="sidebar-container">
             <ul className="sidebar">
-                <li>
+                <li className="account-li">
                     <a href="#">
                         <div className="account-img"></div>
                         <div>
