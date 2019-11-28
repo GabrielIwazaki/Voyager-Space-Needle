@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 
 
 
+
 export default class editingFields extends Component {
     // constructor responsible for setting field properties
     constructor() {

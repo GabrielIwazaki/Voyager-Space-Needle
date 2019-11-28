@@ -1,6 +1,7 @@
 import React from 'react'
 import "../../Assets/css/menu.css"
 
+
 function menu(){
     return (
     <div className="menu">
@@ -15,7 +16,7 @@ function menu(){
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://localhost:3000/editingfields">
                         <div className="doc-fields"></div>
                         <div>
                             Campos do Document
@@ -23,7 +24,7 @@ function menu(){
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://localhost:3000/editingviews">
                         <div className="views-add"></div>
                         <div>
                             Cadastro de Views
@@ -47,7 +48,7 @@ function menu(){
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="http://localhost:3000/senddocuments">
                         <div className="send-doc"></div>
                         <div>
                             Envio de Document
