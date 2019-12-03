@@ -58,6 +58,7 @@
     margin-top: 2em;
     margin-bottom: -2vh;
     margin-left: 80px;
+    color: black;
 }
 .itensView {
     display: flex;
@@ -172,6 +173,7 @@
 
 .columns .title {
     margin-left: 10px;
+    color: black;
 }
 .columnDiv {
     display: inline;
@@ -183,6 +185,7 @@
     align-self: baseline;
     margin-left: 77px;
     margin-top: 25px;
+    color: black;
 }
 .orderGeral {
     width: 80%;
@@ -330,6 +333,7 @@ form{
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
+    color: black;
     padding: 0 12px 0 5px;
     
 }
