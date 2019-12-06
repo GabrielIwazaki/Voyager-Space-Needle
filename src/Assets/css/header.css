@@ -1,0 +1,19 @@
+.top-header {
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    height: 9vh;
+    background: #E8E8E8;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0 2px 5px 4px rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.16);
+}
+.logo {
+    margin-right: 15px;
+    height: 55px;
+    width: 64.98px;
+    background-size: 64.98px;
+    background-repeat: no-repeat;
+    background-image: url(/static/media/logo-png.a91347bf.png);
+}
