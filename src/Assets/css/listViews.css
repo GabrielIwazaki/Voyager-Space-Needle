@@ -1,0 +1,26 @@
+.listViews-container {
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+.listView-container {
+    width: 16%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    height: 100%;
+    z-index: -1;
+}
+.kJdJTV {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    margin-left: 17%;
+    width: 100%;
+}
+.bTnnmE {
+    margin-top: 10px;
+    right: 0;
+}
