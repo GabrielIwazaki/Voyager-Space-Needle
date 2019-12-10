@@ -275,76 +275,75 @@ export default class editingFields extends Component {
               </div>
               <div>
                 <table className="conditionsView">
-                  <div className="itensView-title">
-                    <thead>
-                      <tr>
-                        <th className="conditionsTitle">Condições</th>
-                        <th></th>
-                        <th></th>
+                  {/* <div className="itensView-title"> */}
+                  <thead>
+                    <tr>
+                      <th className="conditionsTitle">Condições</th>
+                      <th></th>
+                      <th></th>
 
-                      </tr>
-                    </thead>
-                  </div>
-                  <div className="itensView-container">
+                    </tr>
+                  </thead>
+                  {/* </div> */}
+                  {/* <div className="itensView-container"> */}
                     <tbody>
                       {this.state.conditions.map((item, index) => {
                         return (
-                          <div className="itensView">
-                            <tr className="itensView-tr" key={index}>
-                              <td>
-                                <select
-                                  className="item"
-                                  name={"field"}
-                                  defaultValue={item.field}
-                                  data-count={index}
-                                  onChange={this.onChangeFieldName.bind(this)}
-                                >
-                                  <option value="">Selecione</option>
-                                  {this.state.fields.map((field, index) => {
-                                    return (
-                                      <option key={index} value={field.fieldName}>
-                                        {field.fieldName}
-                                      </option>
-                                    );
-                                  })}
-                                  ) }
+                          // <div className="itensView">
+                          <tr className="itensView-tr" key={index}>
+                            <td>
+                              <select
+                                className="item"
+                                name={"field"}
+                                defaultValue={item.field}
+                                data-count={index}
+                                onChange={this.onChangeFieldName.bind(this)}
+                              >
+                                <option value="">Selecione</option>
+                                {this.state.fields.map((field, index) => {
+                                  return (
+                                    <option key={index} value={field.fieldName}>
+                                      {field.fieldName}
+                                    </option>
+                                  );
+                                })}
+                                ) }
                             </select>
-                              </td>
-                              <td>
-                                <select
-                                  className="item"
-                                  name={"condition"}
-                                  defaultValue={item.conditional}
-                                  data-count={index}
-                                  onChange={this.onChangeConditionnal.bind(this)}
-                                  disabled={
-                                    this.state.conditions[index].field === ""
-                                      ? "none"
-                                      : ""
-                                  }
-                                >
-                                  <option value="">Selecione</option>
-                                  <option value="É">É</option>
-                                  <option value="Não é">Não é</option>
-                                </select>
-                              </td>
-                              <td>
-                                <select
-                                  className="item"
-                                  name={"answer"}
-                                  defaultValue={item.answer}
-                                  data-count={index}
-                                  onChange={this.onChangeAnswer.bind(this)}
-                                  disabled={item.field === "" ? "none" : ""}
-                                >
-                                  <option value="">Selecione</option>
-                                  {this.listAnswers(index).map((answer, index) => {
-                                    return <option key={index}>{answer}</option>;
-                                  })}
-                                  )
+                            </td>
+                            <td>
+                              <select
+                                className="item"
+                                name={"condition"}
+                                defaultValue={item.conditional}
+                                data-count={index}
+                                onChange={this.onChangeConditionnal.bind(this)}
+                                disabled={
+                                  this.state.conditions[index].field === ""
+                                    ? "none"
+                                    : ""
+                                }
+                              >
+                                <option value="">Selecione</option>
+                                <option value="É">É</option>
+                                <option value="Não é">Não é</option>
+                              </select>
+                            </td>
+                            <td>
+                              <select
+                                className="item"
+                                name={"answer"}
+                                defaultValue={item.answer}
+                                data-count={index}
+                                onChange={this.onChangeAnswer.bind(this)}
+                                disabled={item.field === "" ? "none" : ""}
+                              >
+                                <option value="">Selecione</option>
+                                {this.listAnswers(index).map((answer, index) => {
+                                  return <option key={index}>{answer}</option>;
+                                })}
+                                )
                             </select>
-                              </td>
-                            </tr>
+                            </td>
 
                             <td>
                               <div
@@ -354,14 +353,15 @@ export default class editingFields extends Component {
                               >
                               </div>
                             </td>
-                          </div>
+                          </tr>
+                          // </div>
 
                         );
                       })}
                       <th style={{ textAlign: "right" }}>
                       </th>
                     </tbody>
-                  </div>
+                  {/* </div>; */}
                   <div className="button-div">
                     <button
                       className="add"

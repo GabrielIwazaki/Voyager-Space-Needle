@@ -65,6 +65,10 @@
     font-weight: normal; 
     color: black;
 }
+.conditionsView tbody {
+    width: 88%;
+    margin-left: 9.5%;
+}
 .itensView-container {
     display: flex;
     justify-content: space-between;
@@ -88,6 +92,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin-left: 9%;
 }
 .itensView-extra {
     margin-left: 41px;
